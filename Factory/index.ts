@@ -1,16 +1,18 @@
 /**
  * @description 工厂模式
- * @description 多个不相关的功能需要按某种逻辑进行初始化等操作，可使用工厂模式进行解耦
+ * @description 工厂模式隐藏了各个功能的构建细节，创建器并不需要知道各个功能的构建过程，完全由其自身决定
  */
 
 const factories = {
     personInfo() {
+        // 省略构建过程
         return {
             name: '2131',
             age: 2,
         }
     },
     config() {
+        // 省略构建过程
         return {
             serviceHost: 'http',
             env: 'dev',
@@ -25,7 +27,7 @@ function factory(type: keyof typeof factories) {
 console.log('personInfo', factory('personInfo'))
 console.log('config', factory('config'))
 
-// 依赖注入
+// 结合依赖注入
 // ----------------------------------------------------------------------
 class Factory {
     private tasks: { [key: string]: () => void } = {}

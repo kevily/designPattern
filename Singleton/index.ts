@@ -1,9 +1,9 @@
 /**
  * @description 单例模式
- * @description 每次new出来的都应该是同一个实例，确保全局唯一性
+ * @description 在需要确保某个功能的全局唯一性时，可使用单例模式
  */
 class Singletion {
-    static instance = null
+    static instance: any = null
     public a: number
     constructor() {
         this.a = 0
