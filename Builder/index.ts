@@ -1,7 +1,6 @@
 /**
  * @description 建造者模式
- * @description 建造者模式解耦了沟构造器与构建逻辑，规范了的构建过程，后续新增同类功能只需要添加对应的构建逻辑即可
- * @description 各个功能应该是同类，构建过程是一致的，最后由构造器进行构建
+ * @description 简介: 各模块的构建过程应该是大同小异的，并且由构建者决定流程，构建细节允许差异，并且对构建者隐藏。
  */
 
 abstract class Message {
@@ -53,11 +52,11 @@ class SuccessMessage extends Message {
     }
 }
 
-function setMessage(builder: Message) {
-    builder.setType()
-    builder.setTimer()
-    builder.setMessage()
-    return builder
+function setMessage(message: Message) {
+    message.setType()
+    message.setTimer()
+    message.setMessage()
+    return message
 }
 setMessage(new ErrorMessage()).print()
 setMessage(new SuccessMessage()).print()

@@ -1,6 +1,6 @@
 /**
  * @description 工厂模式
- * @description 工厂模式隐藏了各个功能的构建细节，创建器并不需要知道各个功能的构建过程，完全由其自身决定
+ * @description 简介: 各模块的构建过程细节应该由其自身决定，构造者不需要知道
  */
 
 const factories = {
