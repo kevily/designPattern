@@ -1,5 +1,5 @@
 /**
- * @default 原型模式
+ * @description 原型模式
  * @description 简介：拷贝类的原型以及数据，规避初始化带来的时间成本
  */
 class System {
