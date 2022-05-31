@@ -21,7 +21,7 @@ interface SystemType {
     /** 桥 */
     messageInstance: MessageType
     type: string
-    getMessage(): MessageType['message']
+    get systemType(): string
 }
 class SystemA implements SystemType {
     messageInstance: MessageType
@@ -30,8 +30,8 @@ class SystemA implements SystemType {
         this.messageInstance = messageInstance
         this.type = 'SystemA'
     }
-    getMessage() {
-        return this.messageInstance.message
+    get systemType() {
+        return `${this.type}-${this.messageInstance.type}`
     }
 }
 class SystemB implements SystemType {
@@ -41,15 +41,15 @@ class SystemB implements SystemType {
         this.messageInstance = messageInstance
         this.type = 'SystemB'
     }
-    getMessage() {
-        return this.messageInstance.message
+    get systemType() {
+        return `${this.type}-${this.messageInstance.type}`
     }
 }
 const systemA_messageA = new SystemA(new MessageA())
 const systemA_messageB = new SystemA(new MessageB())
 const systemB_messageA = new SystemB(new MessageA())
 const systemB_messageB = new SystemB(new MessageB())
-console.log('systemA_messageA:', systemA_messageA.getMessage())
-console.log('systemA_messageB:', systemA_messageB.getMessage())
-console.log('systemB_messageA:', systemB_messageA.getMessage())
-console.log('systemB_messageB:', systemB_messageB.getMessage())
+console.log('systemA_messageA:', systemA_messageA.systemType)
+console.log('systemA_messageB:', systemA_messageB.systemType)
+console.log('systemB_messageA:', systemB_messageA.systemType)
+console.log('systemB_messageB:', systemB_messageB.systemType)

@@ -1,6 +1,6 @@
 /**
  * @description 代理模式
- * @description 简介：使用一个"中间人"来代理对象，以确保在原功能和行为不被破坏对其进行扩展，改变行为。经典案例：js原生Proxy
+ * @description 简介：使用一个"中间人"来代理对象，以确保在原功能和行为不被破坏的情况下添加对其添加功能的访问权限。经典案例：js原生Proxy
  */
 
 const personInfo = {
